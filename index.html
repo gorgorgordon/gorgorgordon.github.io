@@ -1,85 +1,109 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
-        <meta name="description" content="CSS Tutorials, JavaScript Tutorials and Games!">
-        <title>Gordon's Website</title>
-        <link rel="icon" href="g.ico" />
-        <link href="https://fonts.googleapis.com/css?family=Karla|Solway&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="gordon.css" />
-        <script src="gordon.js"></script>
-    </head>
-    <body>
-        <div class="content page">
-            <header>
-                <h3>Gordon's Website</h3>
-                <nav>
-                    <ul>
-                        <li class="listItem">Tutorials</li>
-                        <li class="listItem">Games</li>
-                        <!--<li class="listItem">Designs</li>-->
-                        <!--<li class="listItem">About</li>-->
-                    </ul>
-                </nav>
-                <div class="menuButton"></div>
-            </header>
-            <main>
-                <section class="landing">
-                    <h4>I code for fun. </h4>
-                    <img class="img1" src="img/sailing-boat-1593613__340.webp" />
-                    <div class="carouselOuterCtnr">
-                        <div class="carouselInnerCtnr">
-                            <img src="" />
-                            <img src="" />
-                            <img src="" />
-                            
-                        </div>
-                    </div>
-                </section>
-                <section class="tutorials">
-                    <h4>Tutorials</h4>
-                    <div class="flexCtnr">
-                        <h5>CSS Tutorials</h5>
-                        <p><a href="https://code.sololearn.com/W3gS00IGw160/?ref=app">Responsive Design Tutorials</a></p>
-                        <h5>JavaScript Tutorials</h5>
-                        <!--<p>Image Preloading and Lazy Loading</p>-->
-                        <p><a href="tutorials/js-for.html">for, for in, for of, forEach</a></p>
-                        <!--<p>Multiple Choice Quiz Tutorial</p>-->
-                        <!--<p>Single Page Application demo</p>-->
-                    </div>
-                </section>
-                <section class="games">
-                    <h4>Games</h4>
-                    <div class="flexCtnr">
-                        <p><a href="https://code.sololearn.com/WMSROPdKNoCl/?ref=app">Knight VS Dragon</a></p>
-                        <p><a href="https://code.sololearn.com/WlUVtrci7y2U/?ref=app">How fast is your reaction?</a></p>
-                        <p><a href="https://code.sololearn.com/WpvErD1bcH0P/?ref=app">Who is faster?</a></p>
-                        <!--<p><a href=" ">Division Game (React)</a></p>-->
-                    </div>
-                </section>
-                <section class="designs">
-                    <h4>Designs</h4>
-                    <div class="flexCtnr">
-                        
-                    </div>
-                </section>
-                <section class="about">
-                    <h4>About</h4>
-                    <p>I code for fun.</p>
-                </section>          
-            </main>
-            <footer></footer>
+<html lang="en">
 
+<head>
+  <!--https://www.youtube.com/playlist?list=PLkqwj9vc20pUitqvZrLPk-hTNv63EJqwg-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gordon's To-do List</title>
+  <meta name="description" content="Help managing daily activities. Be organized.">
+  <link rel="stylesheet" href="todo.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.min.js"></script>
+  -->
+  <link rel="stylesheet" href="./fullcalendar/main.min.css">
+  <script src="./fullcalendar/main.min.js" defer></script>
+  <script src="todo.js" defer></script>
+</head>
+
+<body>
+  <h3>Gordon's To-do List</h3>
+  <div class="todo-grid-parent">
+
+    <div>
+      <div class="todo-input todo-block">
+        <span>To-do: </span>
+        <input type="text" placeholder="Enter new to-do">
+        <span>Category: </span>
+        <input type="text" placeholder="Enter category" list="categoryList">
+        <datalist id="categoryList">
+          <option value="Personal"></option>
+          <option value="Work"></option>
+        </datalist>
+        <span>Date:</span>
+        <input type="date" id="dateInput">
+        <span>Time:</span>
+        <input type="time" id="timeInput">
+        <span></span>
+        <button id="addBtn">Add</button>
+        <span></span>
+        <button id="sortBtn">Sort by Date</button>
+        <span></span>
+        <label><input type="checkbox" id="shortlistBtn"> Incomplete First </label>
+
+      </div>
+
+      <div class="todo-block todoTable-block">
+        <div class="itemsPerPage">
+          <span>items per page</span>
+          <select id="itemsPerPageSelectElem">
+            <option>5</option>
+            <option>10</option>
+            <option>20</option>
+          </select>
         </div>
-        <div class="overlay page hidden"></div>
-        <div class="loading page">
-            <svg class="gLogo" viewbox="0 0 400 400">
-                <circle cx="200" cy="200" r="100" fill="#444499"></circle>
-                <circle cx="200" cy="200" r="63" fill="#f0f0ff"></circle>
-                <polygon points="220, 170 220, 200 300, 200 300 170" fill="#f0f0ff" />
-                <polygon points="220, 200 220, 230 270, 230 300 200" fill="#444499" />
-            </svg>
+
+        <table id="todoTable">
+          <tr>
+            <td></td>
+            <td>Date</td>
+            <td>Time</td>
+            <td>to-do</td>
+            <td>
+              <select id="categoryFilter">
+              </select>
+            </td>
+            <td></td>
+          </tr>
+        </table>
+
+        <div class="pagination-pages">
+          
         </div>
-    </body>
+      </div>
+
+    </div>
+
+    <div class="todo-calendar  todo-block">
+      <div id='calendar'></div>
+    </div>
+
+  </div> <!-- class="todo-grid-parent" -->
+
+  <div class="todo-overlay" id="todo-overlay">
+    <div class="todo-modal" id="todo-modal">
+      <div class="todo-input todo-block">
+        <span>To-do: </span>
+        <input type="text" placeholder="Enter new to-do" id="todo-edit-todo">
+        <span>Category: </span>
+        <input type="text" placeholder="Enter category" list="categoryList" id="todo-edit-category">
+        <datalist id="categoryList">
+          <option value="Personal"></option>
+          <option value="Work"></option>
+        </datalist>
+        <span>Date:</span>
+        <input type="date" id="todo-edit-date">
+        <span>Time:</span>
+        <input type="time" id="todo-edit-time">
+        <span></span>
+        <button id="changeBtn">Save Change</button>
+      </div>
+    </div>
+    <div class="todo-modal-close-btn" id="todo-modal-close-btn">X</div>
+  </div>
+
+</body>
+
 </html>
