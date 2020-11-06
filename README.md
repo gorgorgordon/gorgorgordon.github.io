@@ -1,7 +1,7 @@
 # gorgorgordon.github.io
 
 Live App Available at:
-https://gorgorgordon.github.io
+[Gordon's To-do List](https://gorgorgordon.github.io, "See Gordon's To-do List")
 
 This is source code for up to lesson 23 of my JavaScript Todo-List Tutorial Series
 The YouTube Playlist:
